@@ -2,216 +2,32 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow Model Setup 'clock_50'
-Slack : -3.719
-TNS   : -18.396
-
-Type  : Slow Model Setup 'clk_div:inst2|clock_1Hz'
-Slack : -1.973
-TNS   : -23.488
-
-Type  : Slow Model Setup 'clk_div:inst2|clock_1Khz_int'
-Slack : -0.209
-TNS   : -0.251
-
-Type  : Slow Model Setup 'clk_div:inst2|clock_100hz_int'
-Slack : -0.199
-TNS   : -0.246
-
-Type  : Slow Model Setup 'clk_div:inst2|clock_10Hz_int'
-Slack : -0.077
-TNS   : -0.161
-
-Type  : Slow Model Setup 'clk_div:inst2|clock_100Khz_int'
-Slack : -0.071
-TNS   : -0.148
-
-Type  : Slow Model Setup 'clk_div:inst2|clock_1Mhz_int'
-Slack : -0.069
-TNS   : -0.137
-
-Type  : Slow Model Setup 'clk_div:inst2|clock_10Khz_int'
-Slack : -0.063
-TNS   : -0.141
-
 Type  : Slow Model Setup 'inst17|video_PLL_inst|altpll_component|pll|clk[0]'
-Slack : 9.738
-TNS   : 0.000
-
-Type  : Slow Model Hold 'clk_div:inst2|clock_100Khz_int'
-Slack : -2.203
-TNS   : -2.203
-
-Type  : Slow Model Hold 'clk_div:inst2|clock_10Khz_int'
-Slack : -2.168
-TNS   : -2.168
-
-Type  : Slow Model Hold 'clk_div:inst2|clock_100hz_int'
-Slack : -2.162
-TNS   : -2.162
-
-Type  : Slow Model Hold 'clk_div:inst2|clock_1Khz_int'
-Slack : -2.151
-TNS   : -2.151
-
-Type  : Slow Model Hold 'clk_div:inst2|clock_1Mhz_int'
-Slack : -2.034
-TNS   : -2.034
-
-Type  : Slow Model Hold 'clock_50'
-Slack : -1.446
-TNS   : -4.632
-
-Type  : Slow Model Hold 'clk_div:inst2|clock_10Hz_int'
-Slack : 0.391
-TNS   : 0.000
-
-Type  : Slow Model Hold 'clk_div:inst2|clock_1Hz'
-Slack : 0.391
+Slack : 36.148
 TNS   : 0.000
 
 Type  : Slow Model Hold 'inst17|video_PLL_inst|altpll_component|pll|clk[0]'
 Slack : 0.391
 TNS   : 0.000
 
-Type  : Slow Model Minimum Pulse Width 'clk_div:inst2|clock_1Hz'
-Slack : -0.500
-TNS   : -13.000
-
-Type  : Slow Model Minimum Pulse Width 'clk_div:inst2|clock_100Khz_int'
-Slack : -0.500
-TNS   : -4.000
-
-Type  : Slow Model Minimum Pulse Width 'clk_div:inst2|clock_100hz_int'
-Slack : -0.500
-TNS   : -4.000
-
-Type  : Slow Model Minimum Pulse Width 'clk_div:inst2|clock_10Hz_int'
-Slack : -0.500
-TNS   : -4.000
-
-Type  : Slow Model Minimum Pulse Width 'clk_div:inst2|clock_10Khz_int'
-Slack : -0.500
-TNS   : -4.000
-
-Type  : Slow Model Minimum Pulse Width 'clk_div:inst2|clock_1Khz_int'
-Slack : -0.500
-TNS   : -4.000
-
-Type  : Slow Model Minimum Pulse Width 'clk_div:inst2|clock_1Mhz_int'
-Slack : -0.500
-TNS   : -4.000
-
 Type  : Slow Model Minimum Pulse Width 'clock_50'
-Slack : 8.077
+Slack : 10.000
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'inst17|video_PLL_inst|altpll_component|pll|clk[0]'
 Slack : 19.000
 TNS   : 0.000
 
-Type  : Fast Model Setup 'clock_50'
-Slack : -0.970
-TNS   : -4.719
-
-Type  : Fast Model Setup 'clk_div:inst2|clock_1Hz'
-Slack : -0.300
-TNS   : -3.300
-
-Type  : Fast Model Setup 'clk_div:inst2|clock_1Khz_int'
-Slack : 0.439
-TNS   : 0.000
-
-Type  : Fast Model Setup 'clk_div:inst2|clock_100hz_int'
-Slack : 0.444
-TNS   : 0.000
-
-Type  : Fast Model Setup 'clk_div:inst2|clock_10Hz_int'
-Slack : 0.503
-TNS   : 0.000
-
-Type  : Fast Model Setup 'clk_div:inst2|clock_100Khz_int'
-Slack : 0.506
-TNS   : 0.000
-
-Type  : Fast Model Setup 'clk_div:inst2|clock_1Mhz_int'
-Slack : 0.508
-TNS   : 0.000
-
-Type  : Fast Model Setup 'clk_div:inst2|clock_10Khz_int'
-Slack : 0.509
-TNS   : 0.000
-
 Type  : Fast Model Setup 'inst17|video_PLL_inst|altpll_component|pll|clk[0]'
-Slack : 14.181
-TNS   : 0.000
-
-Type  : Fast Model Hold 'clk_div:inst2|clock_100Khz_int'
-Slack : -1.359
-TNS   : -1.359
-
-Type  : Fast Model Hold 'clk_div:inst2|clock_10Khz_int'
-Slack : -1.333
-TNS   : -1.333
-
-Type  : Fast Model Hold 'clk_div:inst2|clock_100hz_int'
-Slack : -1.326
-TNS   : -1.326
-
-Type  : Fast Model Hold 'clk_div:inst2|clock_1Khz_int'
-Slack : -1.319
-TNS   : -1.319
-
-Type  : Fast Model Hold 'clk_div:inst2|clock_1Mhz_int'
-Slack : -1.279
-TNS   : -1.279
-
-Type  : Fast Model Hold 'clock_50'
-Slack : -1.192
-TNS   : -5.465
-
-Type  : Fast Model Hold 'clk_div:inst2|clock_10Hz_int'
-Slack : 0.215
-TNS   : 0.000
-
-Type  : Fast Model Hold 'clk_div:inst2|clock_1Hz'
-Slack : 0.215
+Slack : 38.286
 TNS   : 0.000
 
 Type  : Fast Model Hold 'inst17|video_PLL_inst|altpll_component|pll|clk[0]'
 Slack : 0.215
 TNS   : 0.000
 
-Type  : Fast Model Minimum Pulse Width 'clk_div:inst2|clock_1Hz'
-Slack : -0.500
-TNS   : -13.000
-
-Type  : Fast Model Minimum Pulse Width 'clk_div:inst2|clock_100Khz_int'
-Slack : -0.500
-TNS   : -4.000
-
-Type  : Fast Model Minimum Pulse Width 'clk_div:inst2|clock_100hz_int'
-Slack : -0.500
-TNS   : -4.000
-
-Type  : Fast Model Minimum Pulse Width 'clk_div:inst2|clock_10Hz_int'
-Slack : -0.500
-TNS   : -4.000
-
-Type  : Fast Model Minimum Pulse Width 'clk_div:inst2|clock_10Khz_int'
-Slack : -0.500
-TNS   : -4.000
-
-Type  : Fast Model Minimum Pulse Width 'clk_div:inst2|clock_1Khz_int'
-Slack : -0.500
-TNS   : -4.000
-
-Type  : Fast Model Minimum Pulse Width 'clk_div:inst2|clock_1Mhz_int'
-Slack : -0.500
-TNS   : -4.000
-
 Type  : Fast Model Minimum Pulse Width 'clock_50'
-Slack : 8.077
+Slack : 10.000
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'inst17|video_PLL_inst|altpll_component|pll|clk[0]'

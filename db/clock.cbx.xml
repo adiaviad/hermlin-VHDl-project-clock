@@ -1,6 +1,5 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="clock">
-		<CBX_INST_ENTRY INSTANCE_NAME="|all|Char_ROM:inst12|LPM_ROM:char_gen_rom|altrom:srom|altsyncram:rom_block" CBX_FILE_NAME="altsyncram_6401.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

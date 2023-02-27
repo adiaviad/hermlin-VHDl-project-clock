@@ -1,29 +1,31 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.std_logic_unsigned.all;
-use ieee.std_logic_arith.all; 
+use ieee.numeric_std.all;
+
 entity VGA_Controller is
 port(
-	pixel_column : in std_logic_vector(9 downto 0);
-	pixel_row : in std_logic_vector(9 downto 0);
-	digit1,digit2,digit3,digit4 : in std_logic_vector(3 downto 0);
-	i,j: in std_logic_vector(9 downto 0);
-	letter : out std_logic_vector(5 downto 0));
-	
+    pixel_column,pixel_row : in std_logic_vector(9 downto 0);--reference frame is the edge of the screen 
+    wanted_pixel_in_column,wanted_pixel_in_row : in std_logic_vector(9 downto 0); -- reference frame is the edge of the square clock 
+    quarter : in std_logic_vector(1 downto 0);-- 10.5 to 1.5 is 0 up ; 1.5 to 4.5 is 1 right ; 4.5 to 7.5 is 2 down ; 7.5 to 10.5 is 3 left; 
+    color : out std_logic
+);
 end entity;
 
 architecture arch_VGA_Controller of VGA_Controller is
+constant halfSideOfClockSquare: unsigned(6 downto 0) := to_unsigned(75, 7);
+constant centerPixelRow: unsigned(8 downto 0) := to_unsigned(320, 9);
+constant centerPixelColumn: unsigned(7 downto 0) := to_unsigned(240, 8);
+constant pixelSize: unsigned(1 downto 0) := to_unsigned(3, 2);
+ signal insideTheClock : std_logic;
 begin
-		letter<=
-		   (digit1 xor conv_std_logic_vector(48,6)) when pixel_column>=(0+i) and pixel_column<(8+i)  and pixel_row>=(0+j) and pixel_row<(8+j) else
-			(digit2 xor conv_std_logic_vector(48,6)) when pixel_column>=(8+i) and pixel_column<(16+i)  and pixel_row>=(0+j) and pixel_row<(8+j) else
-			"111111" when pixel_column>=(16+i) and pixel_column<(24+i)  and pixel_row>=(0+j) and pixel_row<(8+j) else
-			(digit3 xor conv_std_logic_vector(48,6)) when pixel_column>=(24+i) and pixel_column<(32+i)  and pixel_row>=(0+j) and pixel_row<(8+j) else
-			(digit4 xor conv_std_logic_vector(48,6)) when pixel_column>=(32+i) and pixel_column<(40+i)  and pixel_row>=(0+j) and pixel_row<(8+j) else
-			"100000";
-end architecture;
+    insideTheClock <= '1' when (unsigned(centerPixelRow-halfSideOfClockSquare) <= unsigned(pixel_row)) and (unsigned(centerPixelRow+halfSideOfClockSquare) > unsigned(pixel_row))
+                         and (unsigned(centerPixelColumn-halfSideOfClockSquare) <= unsigned(pixel_column)) and (unsigned(centerPixelColumn+halfSideOfClockSquare) > unsigned(pixel_column))
+								else '0';
 
-		  
-						 			 
-		 
-						
+    color <= '0' when insideTheClock='0' else
+             '1' when (quarter="00") and (wanted_pixel_in_row=pixel_row) and (unsigned(pixel_row)>=centerPixelRow) and insideTheClock='1' else
+             '1' when (quarter="01") and (wanted_pixel_in_column=pixel_column) and (unsigned(pixel_column)>=centerPixelColumn) and insideTheClock='1' else
+             '1' when (quarter="10") and (wanted_pixel_in_row=pixel_row) and (unsigned(pixel_row)<=centerPixelRow) and insideTheClock='1' else
+             '1' when (quarter="11") and (wanted_pixel_in_column=pixel_column) and (unsigned(pixel_column)<=centerPixelColumn) and insideTheClock='1' else
+             '0';
+end architecture;
