@@ -18,14 +18,15 @@ constant centerPixelColumn: unsigned(7 downto 0) := to_unsigned(240, 8);
 constant pixelSize: unsigned(1 downto 0) := to_unsigned(3, 2);
  signal insideTheClock : std_logic;
 begin
-    insideTheClock <= '1' when (unsigned(centerPixelRow-halfSideOfClockSquare) <= unsigned(pixel_row)) and (unsigned(centerPixelRow+halfSideOfClockSquare) > unsigned(pixel_row))
-                         and (unsigned(centerPixelColumn-halfSideOfClockSquare) <= unsigned(pixel_column)) and (unsigned(centerPixelColumn+halfSideOfClockSquare) > unsigned(pixel_column))
-								else '0';
+--    insideTheClock <= '1' when (unsigned(centerPixelRow-halfSideOfClockSquare) <= unsigned(pixel_row)) and (unsigned(centerPixelRow+halfSideOfClockSquare) > unsigned(pixel_row))
+--                         and (unsigned(centerPixelColumn-halfSideOfClockSquare) <= unsigned(pixel_column)) and (unsigned(centerPixelColumn+halfSideOfClockSquare) > unsigned(pixel_column))
+--								else '0';
+insideTheClock<='1';
 
     color <= '0' when insideTheClock='0' else
-             '1' when (quarter="00") and (wanted_pixel_in_row=pixel_row) and (unsigned(pixel_row)>=centerPixelRow) and insideTheClock='1' else
-             '1' when (quarter="01") and (wanted_pixel_in_column=pixel_column) and (unsigned(pixel_column)>=centerPixelColumn) and insideTheClock='1' else
-             '1' when (quarter="10") and (wanted_pixel_in_row=pixel_row) and (unsigned(pixel_row)<=centerPixelRow) and insideTheClock='1' else
-             '1' when (quarter="11") and (wanted_pixel_in_column=pixel_column) and (unsigned(pixel_column)<=centerPixelColumn) and insideTheClock='1' else
+             '1' when (quarter="00") and (wanted_pixel_in_column=pixel_column) and (unsigned(pixel_row)<=centerPixelRow) and insideTheClock='1' else
+             '1' when (quarter="01") and (wanted_pixel_in_row=pixel_row) and (unsigned(pixel_column)>=centerPixelColumn) and insideTheClock='1' else
+             '1' when (quarter="10") and (wanted_pixel_in_column=pixel_column) and (unsigned(pixel_row)>=centerPixelRow) and insideTheClock='1' else
+             '1' when (quarter="11") and (wanted_pixel_in_row=pixel_row) and (unsigned(pixel_column)<=centerPixelColumn) and insideTheClock='1' else
              '0';
 end architecture;

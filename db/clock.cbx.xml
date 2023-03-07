@@ -1,5 +1,12 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="clock">
+		<CBX_INST_ENTRY INSTANCE_NAME="|all|pixelInColomn:inst4|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_8ch.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|all|pixelInColomn:inst4|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_3ch.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|all|pixelInRow:inst5|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]" CBX_FILE_NAME="add_sub_8ch.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|all|pixelInColomn:inst4|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]" CBX_FILE_NAME="add_sub_8ch.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|all|pixelInRow:inst5|lpm_mult:Mult0" CBX_FILE_NAME="mult_s6t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|all|pixelInRow:inst5|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_8ch.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|all|pixelInRow:inst5|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_3ch.tdf"/>
 	</PROJECT>
 </LOG_ROOT>
